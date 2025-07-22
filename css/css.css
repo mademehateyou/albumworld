@@ -1,0 +1,1058 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+:root {
+  --bg-color: #000000;
+  --text-color: #03d745;
+  --accent-color: #03d745;
+  --link-color: #00bfff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6%;
+  overflow: hidden; /* Disable native scrolling for slideshow */
+  scroll-behavior: smooth;
+}
+
+#slides-container {
+  height: 100%;
+  overflow: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+.slide {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+}
+
+.slide img {
+  max-height: 100vh;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+footer {
+  background-color: #00FF00;
+  color: #00FF00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.bottom-sliding-text {
+  position: fixed;
+  bottom: env(safe-area-inset-bottom, 5px);
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.scrolling-container {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: slide-left 20s linear infinite;
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  color: deeppink;
+  font-size: clamp(15px, 3vw, 22px);
+  font-family: 'Bebas Neue', sans-serif;
+  margin-right: 5px; /* space between repeats */
+  margin: 7px;
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
+div {
+  margin: 5px;
+}
+
+.nav-buttons {
+  position: fixed;
+  bottom: 20px;       /* 20px from bottom edge */
+  right: 20px;        /* 20px from right edge */
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 15px;
+  z-index: 9999;
+}
+
+.nav-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  color: deeppink;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#countdown {
+    font-size: 750%;
+    letter-spacing: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 9999;
+    color: deeppink;
+    font-family: fantasy, Papyrus;
+}
+
+
+
+@media all and (max-width: 500px) {
+    #countdown {
+    font-size: 100%;
+    letter-spacing: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fc2ec6;
+}
+    .slide {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1000px;
+    scroll-snap-align: center;
+}
+    #firstimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+    #secondimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+}
+#text1 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 150%;
+  padding: 0px;
+  z-index: 1000;
+}
+
+#text2 {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: right;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 150%;
+  padding: 0px;
+  z-index: 1000;
+}
+#firstimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+#secondimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+  margin-top: 3rem;
+}
+#firstimg img,
+#secondimg img {
+  width: 500px;   /* or max-width: 100%; for responsive scaling */
+  height: auto;
+}
+}
+
+@media all and (max-width: 600px) {
+    #countdown {
+    font-size: 100%;
+    letter-spacing: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fc2ec6;
+}
+    .slide {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1000px;
+    scroll-snap-align: center;
+}
+    #firstimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+    #secondimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+}
+#text1 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 150%;
+  padding: 0px;
+  z-index: 1000;
+}
+
+#text2 {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: right;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 150%;
+  padding: 0px;
+  z-index: 1000;
+}
+#firstimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+#secondimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+  margin-top: 3rem;
+}
+#firstimg img,
+#secondimg img {
+  width: 500px;   /* or max-width: 100%; for responsive scaling */
+  height: auto;
+}
+}
+
+@media all and (max-width: 768px) {
+    #countdown {
+    font-size: 100%;
+    letter-spacing: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fc2ec6;
+}
+    .slide {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1000px;
+    scroll-snap-align: center;
+}
+    #firstimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+    #secondimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+}
+#text1 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 150%;
+  padding: 0px;
+  z-index: 1000;
+}
+
+#text2 {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: right;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 150%;
+  padding: 0px;
+  z-index: 1000;
+}
+#firstimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+#secondimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+  margin-top: 3rem;
+}
+#firstimg img,
+#secondimg img {
+  width: 500px;   /* or max-width: 100%; for responsive scaling */
+  height: auto;
+}
+}
+
+@media all and (max-width: 992px) {
+    #countdown {
+    font-size: 100%;
+    letter-spacing: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fc2ec6;
+}
+    .slide {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1000px;
+    scroll-snap-align: center;
+}
+    #firstimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+    #secondimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+}
+#text1 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 90%;
+  padding: 0px;
+  z-index: 1000;
+}
+
+#text2 {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: right;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 90%;
+  padding: 0px;
+  z-index: 1000;
+}
+#firstimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+#secondimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+  margin-top: 3rem;
+}
+#firstimg img,
+#secondimg img {
+  width: 500px;   /* or max-width: 100%; for responsive scaling */
+  height: auto;
+}
+}
+
+@media all and (max-width: 1200px) {
+    #countdown {
+    font-size: 220%;
+    letter-spacing: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fc2ec6;
+}
+    .slide {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1000px;
+    scroll-snap-align: center;
+}
+    #firstimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+    #secondimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+}
+#text1 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 60%;
+  padding: 0px;
+  z-index: 1000;
+}
+
+#text2 {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: right;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 60%;
+  padding: 0px;
+  z-index: 1000;
+}
+#firstimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+#secondimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+  margin-top: 3rem;
+}
+#firstimg img,
+#secondimg img {
+  width: 500px;   /* or max-width: 100%; for responsive scaling */
+  height: auto;
+}
+}
+
+
+
+/* */
+
+
+
+@media all and (min-width: 500px) {
+    #countdown {
+    font-size: 260%;
+    letter-spacing: 1px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fc2ec6;
+}
+    .slide {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1000px;
+    scroll-snap-align: center;
+}
+    #firstimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+    #secondimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+}
+#text1 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 70%;
+  padding: 0px;
+  z-index: 1000;
+}
+
+#text2 {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: right;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 70%;
+  padding: 0px;
+  z-index: 1000;
+}
+#firstimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+#secondimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+  margin-top: 3rem;
+}
+#firstimg img,
+#secondimg img {
+  width: 85%;   /* or max-width: 100%; for responsive scaling */
+  height: auto;
+}
+}
+
+@media all and (min-width: 600px) {
+    #countdown {
+    font-size: 480%;
+    letter-spacing: 5%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fc2ec6;
+}
+    .slide {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1000px;
+    scroll-snap-align: center;
+}
+    #firstimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+    #secondimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+}
+#text1 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 80%;
+  padding: 0px;
+  z-index: 1000;
+}
+
+#text2 {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: right;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 80%;
+  padding: 0px;
+  z-index: 1000;
+}
+#firstimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+#secondimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+  margin-top: 3rem;
+}
+#firstimg img,
+#secondimg img {
+  width: 85%;   /* or max-width: 100%; for responsive scaling */
+  height: auto;
+}
+}
+
+@media all and (min-width: 768px) {
+    #countdown {
+    font-size: 500%;
+    letter-spacing: 5%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fc2ec6;
+}
+    .slide {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1000px;
+    scroll-snap-align: center;
+}
+    #firstimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+    #secondimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+}
+#text1 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 100%;
+  padding: 0px;
+  z-index: 1000;
+}
+
+#text2 {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: right;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 100%;
+  padding: 0px;
+  z-index: 1000;
+}
+#firstimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+#secondimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+  margin-top: 3rem;
+}
+#firstimg img,
+#secondimg img {
+  width: 85%;   /* or max-width: 100%; for responsive scaling */
+  height: auto;
+}
+}
+
+@media all and (min-width: 992px) {
+    #countdown {
+    font-size: 630%;
+    letter-spacing: 5%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fc2ec6;
+}
+    .slide {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1000px;
+    scroll-snap-align: center;
+}
+    #firstimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+    #secondimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+}
+#text1 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 130%;
+  padding: 0px;
+  z-index: 1000;
+}
+
+#text2 {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: right;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 130%;
+  padding: 0px;
+  z-index: 1000;
+}
+#firstimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+#secondimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+  margin-top: 3rem;
+}
+#firstimg img,
+#secondimg img {
+  width: 85%;   /* or max-width: 100%; for responsive scaling */
+  height: auto;
+}
+}
+
+@media all and (min-width: 1200px) {
+    #countdown {
+    font-size: 750%;
+    letter-spacing: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fc2ec6;
+  }
+    .slide {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1000px;
+    scroll-snap-align: center;
+}
+    #firstimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+    #secondimg {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+}
+#text1 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 150%;
+  padding: 0px;
+  z-index: 1000;
+}
+
+#text2 {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: right;
+  color: pink;
+  font-family: Arial, sans-serif;
+  font-size: 150%;
+  padding: 0px;
+  z-index: 1000;
+}
+#firstimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#secondimg {
+  display: block;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#firstimg img,
+#secondimg img {
+  width: 85%;   /* or max-width: 100%; for responsive scaling */
+  height: auto;
+}
+}

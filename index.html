@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+    
+    <main>
+
+    <div id="slides-container">
+
+  <section class="slide"><img src="upscaled/1.png" alt=""></section>
+  <section class="slide"><img src="upscaled/2.png" alt=""></section>
+  <section class="slide"><img src="upscaled/3.png" alt=""></section>
+  <section class="slide"><img src="upscaled/4.png" alt=""></section>
+  <section class="slide"><img src="upscaled/5.png" alt=""></section>
+  <section class="slide"><img src="upscaled/6.png" alt=""></section>
+  <section class="slide"><img src="upscaled/7.png" alt=""></section>
+  
+
+    </div>
+
+    <div class="nav-buttons">
+  
+        <button id="prevSlide" class="nav-button">▲</button>
+        <button id="nextSlide" class="nav-button">▼</button>
+    
+    </div>
+
+    <footer>
+
+        <div id="countdown"></div>
+
+
+          
+
+
+          <div class="bottom-sliding-text">
+  <div class="scrolling-container">
+    <span class="scrolling-text">SPECIAL INFORMATION ABOUT MUSICAL ALBUM TITLED "ALBUM" THAT WILL BE RELEASED IN 2025 BY L0VER AND LORD ENEMY  |  ALL RIGHTS HOPEFULLY WILL BE RESERVED WITH OUR RESPECTFUL OWNERS  |  @LOVERYOURGIRLS and @ENEMYLORD</span>
+    <span class="scrolling-text">SPECIAL INFORMATION ABOUT MUSICAL ALBUM TITLED "ALBUM" THAT WILL BE RELEASED IN 2025 BY L0VER AND LORD ENEMY  |  ALL RIGHTS HOPEFULLY WILL BE RESERVED WITH OUR RESPECTFUL OWNERS  |  @LOVERYOURGIRLS and @ENEMYLORD</span> <!-- Duplicate for seamless loop -->
+  </div>
+</div>
+
+
+          
+    </footer>
+    
+        </main>
+
+            <script>
+  const slidesAndFooter = [...document.querySelectorAll('.slide'), document.querySelector('footer')];
+  let currentIndex = 0;
+
+  function scrollToSection(index) {
+    if (index < 0) index = 0;
+    if (index >= slidesAndFooter.length) index = slidesAndFooter.length - 1;
+    slidesAndFooter[index].scrollIntoView({ behavior: 'smooth' });
+    currentIndex = index;
+  }
+
+  document.getElementById('prevSlide').addEventListener('click', () => {
+    scrollToSection(currentIndex - 1);
+  });
+
+  document.getElementById('nextSlide').addEventListener('click', () => {
+    scrollToSection(currentIndex + 1);
+  });
+</script>
+
+
+                    <script>
+  const slidesContainer = document.getElementById('slides-container');
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  let isScrolling = false;
+
+  window.addEventListener('wheel', (e) => {
+    if (isScrolling) return;
+    isScrolling = true;
+
+    if (e.deltaY > 0) {
+      currentSlide = Math.min(currentSlide + 1, slides.length - 1);
+    } else {
+      currentSlide = Math.max(currentSlide - 1, 0);
+    }
+
+    slides[currentSlide].scrollIntoView({
+      behavior: 'smooth'
+    });
+
+    setTimeout(() => {
+      isScrolling = false;
+    }, 1000); // Prevent rapid scrolling
+  });
+</script>
+
+
+
+                            <script>
+    // Set your target date
+    const targetDate = new Date("July 25, 2025 00:00:00").getTime();
+
+    const countdown = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdown.innerHTML = "Countdown finished!";
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
+    }
+
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Run immediately
+  </script>
+
+
+
+</body>
+</html>
