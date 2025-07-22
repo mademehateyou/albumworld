@@ -134,7 +134,7 @@ function updateCountdown() {
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
 
-    const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    const countdownText = `${days}D ${hours}H ${minutes}M ${seconds}S`;
 
     document.getElementById('countdown').textContent = countdownText;
 }
