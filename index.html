@@ -101,32 +101,48 @@
 
 
                             <script>
-    // Set your target date
-    const targetDate = new Date("July 25, 2025 00:00:00").getTime();
+function getNextFridayMidnight() {
+    const now = new Date();
+    const result = new Date(now);
 
-    const countdown = document.getElementById("countdown");
+    const currentDay = now.getDay();  // Sunday = 0, Friday = 5
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance < 0) {
-        countdown.innerHTML = "Countdown finished!";
-        clearInterval(interval);
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdown.innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
+    let daysToAdd = (5 - currentDay + 7) % 7;
+    if (daysToAdd === 0 && now.getHours() >= 0) {
+        daysToAdd = 7;
     }
 
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Run immediately
-  </script>
+    result.setDate(now.getDate() + daysToAdd);
+    result.setHours(0, 0, 0, 0);
+
+    return result;
+}
+
+function updateCountdown() {
+    const now = new Date();
+    const targetDate = getNextFridayMidnight();
+    const timeDifference = targetDate - now;
+
+    if (timeDifference <= 0) {
+        return;
+    }
+
+    const totalSeconds = Math.floor(timeDifference / 1000);
+
+    const days = Math.floor(totalSeconds / (3600 * 24));
+    const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    document.getElementById('countdown').textContent = countdownText;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
 
 
 
