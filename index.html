@@ -100,8 +100,8 @@
 
 
 
-                           <script>
-    // Set your target date
+                             <script>
+    // Set your target date (local browser time)
     const targetDate = new Date("July 25, 2025 00:00:00").getTime();
 
     const countdown = document.getElementById("countdown");
@@ -111,7 +111,7 @@
       const distance = targetDate - now;
 
       if (distance < 0) {
-        countdown.innerHTML = "Countdown finished!";
+        countdown.innerHTML = "ALBUM!";
         clearInterval(interval);
         return;
       }
