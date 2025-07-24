@@ -100,62 +100,33 @@
 
 
 
-                            function getNextFridayMidnightKyiv() {
-  const now = new Date();
+                           <script>
+    // Set your target date
+    const targetDate = new Date("July 25, 2025 00:00:00").getTime();
 
-  // Get the current date in Kyiv timezone
-  const formatter = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'Europe/Kyiv',
-    weekday: 'short',
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    hour12: false,
-  });
+    const countdown = document.getElementById("countdown");
 
-  const parts = formatter.formatToParts(now).reduce((acc, part) => {
-    acc[part.type] = part.value;
-    return acc;
-  }, {});
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
 
-  const currentKyiv = {
-    year: +parts.year,
-    month: +parts.month,
-    day: +parts.day,
-    hour: +parts.hour,
-    minute: +parts.minute,
-    second: +parts.second,
-    weekday: parts.weekday,
-  };
+      if (distance < 0) {
+        countdown.innerHTML = "Countdown finished!";
+        clearInterval(interval);
+        return;
+      }
 
-  const daysOfWeek = {
-    Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6
-  };
-  const currentDay = daysOfWeek[currentKyiv.weekday];
-  let daysUntilFriday = (5 - currentDay + 7) % 7;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // If it's Friday and past midnight in Kyiv, move to next Friday
-  if (daysUntilFriday === 0 && (currentKyiv.hour > 0 || currentKyiv.minute > 0 || currentKyiv.second > 0)) {
-    daysUntilFriday = 7;
-  }
+      countdown.innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
+    }
 
-  // Target Kyiv Friday at 00:00
-  const targetKyivDate = new Date(Date.UTC(
-    currentKyiv.year,
-    currentKyiv.month - 1,
-    currentKyiv.day + daysUntilFriday,
-    0, 0, 0
-  ));
-
-  // Convert Kyiv midnight to UTC
-  const utcOffsetMs = new Date(targetKyivDate.toLocaleString("en-US", { timeZone: "Europe/Kyiv" })).getTime() - targetKyivDate.getTime();
-  return new Date(targetKyivDate.getTime() - utcOffsetMs);
-}
-
-
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Run immediately
+  </script>
 
 
 
