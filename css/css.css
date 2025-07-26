@@ -38,7 +38,7 @@ html, body {
   max-width: 100%;
   object-fit: contain;
 }
-
+/*
 footer {
   background-color: #00FF00;
   color: #00FF00;
@@ -48,7 +48,7 @@ footer {
   align-items: center;
   height: 100vh;
 }
-
+*/
 .bottom-sliding-text {
   position: fixed;
   bottom: env(safe-area-inset-bottom, 5px);
@@ -111,7 +111,7 @@ div {
 .nav-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
-
+/*
 #countdown {
     font-size: 750%;
     letter-spacing: 20px;
@@ -122,7 +122,7 @@ div {
     color: deeppink;
     font-family: fantasy, Papyrus;
 }
-
+*/
 
 
 @media all and (max-width: 500px) {
