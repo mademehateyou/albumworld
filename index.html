@@ -31,24 +31,6 @@
     
     </div>
 
-    <footer>
-
-        <div id="countdown"></div>
-
-
-          
-
-
-          <div class="bottom-sliding-text">
-  <div class="scrolling-container">
-    <span class="scrolling-text">SPECIAL INFORMATION ABOUT MUSICAL ALBUM TITLED "ALBUM" THAT WILL BE RELEASED IN 2025 BY L0VER AND LORD ENEMY  |  ALL RIGHTS HOPEFULLY WILL BE RESERVED WITH OUR RESPECTFUL OWNERS  |  @LOVERYOURGIRLS and @ENEMYLORD</span>
-    <span class="scrolling-text">SPECIAL INFORMATION ABOUT MUSICAL ALBUM TITLED "ALBUM" THAT WILL BE RELEASED IN 2025 BY L0VER AND LORD ENEMY  |  ALL RIGHTS HOPEFULLY WILL BE RESERVED WITH OUR RESPECTFUL OWNERS  |  @LOVERYOURGIRLS and @ENEMYLORD</span> <!-- Duplicate for seamless loop -->
-  </div>
-</div>
-
-
-          
-    </footer>
     
         </main>
 
@@ -100,33 +82,6 @@
 </script>
 
 
-
-                             <script>
-    // Set your target date (local browser time)
-    const targetDate = new Date("July 25, 2025 00:00:00").getTime();
-
-    const countdown = document.getElementById("countdown");
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance < 0) {
-        countdown.innerHTML = "ALBUM!";
-        clearInterval(interval);
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdown.innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
-    }
-
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Run immediately
-  </script>
+                             
 </body>
 </html>
