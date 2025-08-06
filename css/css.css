@@ -120,8 +120,9 @@ div {
     align-items: center;
     z-index: 9999;
     color: deeppink;
-    font-weight: bold;
 }
+
+
 
 @media all and (max-width: 500px) {
     #countdown {
@@ -1052,5 +1053,3 @@ div {
   height: auto;
 }
 }
-
-
