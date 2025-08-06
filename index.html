@@ -125,7 +125,7 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      countdown.innerHTML = `${days}D ${hours}S ${minutes}M ${seconds}S`;
+      countdown.innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
     }
 
     const interval = setInterval(updateCountdown, 1000);
@@ -136,6 +136,7 @@
    
 </body>
 </html>
+
 
 
 
