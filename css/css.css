@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
-
 :root {
   --bg-color: #000000;
   --text-color: #03d745;
@@ -59,27 +57,21 @@ footer {
   pointer-events: none;
 }
 
-.scrolling-container {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: slide-left 20s linear infinite;
-}
-
 .scrolling-text {
   display: inline-block;
   white-space: nowrap;
+  padding-left: 100%;
+  animation: slide-left 13s linear infinite;
   color: deeppink;
-  font-size: clamp(15px, 3vw, 22px);
-  font-family: 'Bebas Neue', sans-serif;
-  margin-right: 5px; /* space between repeats */
-  margin: 7px;
+  font-size: clamp(10px, 2vw, 18px);
+  font-family: Arial, sans-serif;
+  padding: 12px 0;
 }
 
 @keyframes slide-left {
-  0% { transform: translateX(100%); }
+  0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
-
 
 div {
   margin: 5px;
@@ -113,7 +105,7 @@ div {
 }
 
 #countdown {
-    font-size: clamp(1rem, 5vw, 4rem);
+    font-size: 750%;
     letter-spacing: 20px;
     display: flex;
     text-align: center;
@@ -121,6 +113,8 @@ div {
     z-index: 9999;
     color: deeppink;
 }
+
+
 
 @media all and (max-width: 500px) {
     #countdown {
@@ -1051,3 +1045,4 @@ div {
   height: auto;
 }
 }
+
