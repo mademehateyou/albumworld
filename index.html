@@ -106,7 +106,7 @@
 
       <script>
     // Set your target date
-    const targetDate = new Date("August 8, 2025 00:00:00").getTime();
+    const targetDate = new Date("July 28, 2025 21:00:00").getTime();
 
     const countdown = document.getElementById("countdown");
 
@@ -115,7 +115,7 @@
       const distance = targetDate - now;
 
       if (distance < 0) {
-        countdown.innerHTML = "#BBYG";
+        countdown.innerHTML = "Countdown finished!";
         clearInterval(interval);
         return;
       }
@@ -125,7 +125,7 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      countdown.innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
+      countdown.innerHTML = `${days}D ${hours}S ${minutes}M ${seconds}S`;
     }
 
     const interval = setInterval(updateCountdown, 1000);
@@ -134,5 +134,6 @@
    
 </body>
 </html>
+
 
 
