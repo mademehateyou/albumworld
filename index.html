@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
@@ -12,13 +11,14 @@
 
     <div id="slides-container">
 
-  <section class="slide"><img src="upscaled/123123.png" alt=""></section>
+<section class="slide"><img src="upscaled/123123.png" alt=""></section>
   <section class="slide"><img src="upscaled/2.png" alt=""></section>
   <section class="slide"><img src="upscaled/3.png" alt=""></section>
   <section class="slide"><img src="upscaled/4.png" alt=""></section>
   <section class="slide"><img src="upscaled/5.png" alt=""></section>
   <section class="slide"><img src="upscaled/6.png" alt=""></section>
   <section class="slide"><img src="upscaled/7.png" alt=""></section>
+
   
 
     </div>
@@ -30,31 +30,19 @@
     
     </div>
 
-
-
+    <footer>
 
         <div id="countdown"></div>
 
 
-          
-
-
           <div class="bottom-sliding-text">
-  <div class="scrolling-container">
-    <span class="scrolling-text">SPECIAL INFORMATION ABOUT MUSICAL ALBUM TITLED "ALBUM" THAT WILL BE RELEASED IN 2025 BY L0VER AND LORD ENEMY  |  ALL RIGHTS ARE RESERVED WITH OUR RESPECTFUL OWNERS  |  @LOVERYOURGIRLS and @ENEMYLORD</span>
-    <span class="scrolling-text">SPECIAL INFORMATION ABOUT MUSICAL ALBUM TITLED "ALBUM" THAT WILL BE RELEASED IN 2025 BY L0VER AND LORD ENEMY  |  ALL RIGHTS ARE RESERVED WITH OUR RESPECTFUL OWNERS  |  @LOVERYOURGIRLS and @ENEMYLORD</span> <!-- Duplicate for seamless loop -->
-  </div>
-</div>
+          <div class="scrolling-text">
+            SPECIAL INFORMATION ABOUT MUSICAL ALBUM TITLED "ALBUM" THAT WILL BE RELEASED IN 2025 BY L0VER AND LORD ENEMY  |  ALL RIGHTS HOPEFULLY WILL BE RESERVED WITH OUR RESPECTFUL OWNERS  |  @LOVERYOURGIRLS  &  @ENEMYLORD
+          </div>
+          </div>
 
-
-          
-
-
-
-
-
-
-       
+    </footer>
+    
         </main>
 
             <script>
@@ -104,9 +92,11 @@
   });
 </script>
 
-      <script>
+
+
+                            <script>
     // Set your target date
-    const targetDate = new Date("August 7, 2025 21:00:00").getTime();
+    const targetDate = new Date("July 28, 2025 21:00:00").getTime();
 
     const countdown = document.getElementById("countdown");
 
@@ -125,21 +115,15 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      countdown.innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
+      countdown.innerHTML = `${days}D ${hours}S ${minutes}M ${seconds}S`;
     }
 
     const interval = setInterval(updateCountdown, 1000);
     updateCountdown(); // Run immediately
-</script>
+  </script>
 
 
-   
+
 </body>
 </html>
-
-
-
-
-
-
 
