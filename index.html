@@ -105,48 +105,38 @@
 </script>
 
       <script>
-  // Get current date/time
-  const now = new Date();
+    // Set your target date
+    const targetDate = new Date("August 7, 2025 21:00:00").getTime();
 
-  // Calculate the upcoming Friday in local time
-  const currentDay = now.getUTCDay(); // Sunday = 0, Friday = 5
-  const daysUntilFriday = (5 - currentDay + 7) % 7 || 7; // Get next Friday
+    const countdown = document.getElementById("countdown");
 
-  // Create a date object for upcoming Friday midnight in Ukrainian time (UTC+3)
-  const targetDateUTC = new Date(Date.UTC(
-    now.getUTCFullYear(),
-    now.getUTCMonth(),
-    now.getUTCDate() + daysUntilFriday,
-    21, 0, 0 // 00:00 in UTC+3 is 21:00 previous day in UTC
-  )).getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
 
-  const countdown = document.getElementById("countdown");
+      if (distance < 0) {
+        countdown.innerHTML = "Countdown finished!";
+        clearInterval(interval);
+        return;
+      }
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDateUTC - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if (distance < 0) {
-      countdown.innerHTML = "Countdown finished!";
-      clearInterval(interval);
-      return;
+      countdown.innerHTML = `${days}D ${hours}S ${minutes}M ${seconds}S`;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdown.innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
-  }
-
-  const interval = setInterval(updateCountdown, 1000);
-  updateCountdown(); // Run immediately
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Run immediately
 </script>
+
 
    
 </body>
 </html>
+
 
 
 
